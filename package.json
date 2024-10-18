@@ -1,0 +1,11 @@
+{
+	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.15",
+		"daisyui": "^4.12.13",
+		"tailwindcss": "^3.4.13"
+	},
+	"scripts": {
+		"watch:css": "tailwindcss -i blog/static/style.css -o blog/static/dist/style.css --watch",
+		"buid:css": "tailwindcss -i blog/static/style.css -o blog/static/dist/style.css --watch"
+	}
+}

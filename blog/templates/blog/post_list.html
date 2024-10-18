@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% load i18n %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <div class="text-center mb-14">
+      <a class="btn btn-outline btn-sm" role="button" href="{% url "post_new" %}">
+        {% trans "Create Post" %}
+      </a>
+    </div>
+  {% endif %}
+  {% for post in posts %}
+    <a class="mb-8 py-4" href="{{ post.get_absolute_url }}">
+      <post>
+        <header>
+          <h2 class="text-[28px] font-black">{{ post.title }}</h2>
+          <p class="mb-1 text-sm opacity-70">{{ post.date }}</p>
+        </header>
+      </post>
+    </a>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }}{% else %}Joshua Gartmeier{% endif %}</title>
+  <link href="{% static "dist/style.css" %}" rel="stylesheet">
+  {% block extra_css %}{% endblock %}
+  <link rel="icon" href="data:,">
+</head>
+<body>
+<div class="mx-auto pt-16 max-w-screen-md">
+  {% block toolbar %}{% endblock %}
+  {% block header %}
+    <div class="mb-10 text-center">
+      <a class="inline-block p-2" href="{% url "post_list" %}">
+        <div class="avatar mb-2">
+          <div class="w-14 rounded-full">
+            <img class="avatar" src="{% static "joshua.jpg" %}" alt="Joshua">
+          </div>
+        </div>
+        <p class="uppercase tracking-[0.25rem] text-sm text-neutral-content">Joshua Gartmeier</p>
+      </a>
+    </div>
+  {% endblock %}
+  {% block content %}{% endblock %}
+  {% block extra_js %}{% endblock %}
+</div>
+</body>
+</html>

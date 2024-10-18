@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "gartmeier-dev"
+version = "0.1.0"
+description = ""
+authors = ["Joshua Gartmeier <joshua@gartmeier.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.2"
+django-browser-reload = "^1.16.0"
+nanoid = "^2.0.0"
+markdown = "^3.7"
+pillow = "^10.4.0"
+lucide = {extras = ["django"], version = "^1.0.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+pygments = "^2.18.0"
+ruff = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
