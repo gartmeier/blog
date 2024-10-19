@@ -1,11 +1,11 @@
 {% for field in form %}
-  <label class="form-control">
-    <div class="label">
-      {{ field.label }}
+  <label class="form-control{% if field.css_classes %} {{ field.css_classes }}{% endif %}">
+    <div class="label text-lg font-bold">
+      {{ field.label }}{{ field.attrs }}
     </div>
     {{ field }}
     {% if field.errors %}
-      <div class="label text-error">
+      <div class="label ">
         {{ field.errors }}
       </div>
     {% endif %}

@@ -6,19 +6,17 @@ authors = ["Joshua Gartmeier <joshua@gartmeier.dev>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
 django = "^5.1.2"
 django-browser-reload = "^1.16.0"
-nanoid = "^2.0.0"
-markdown = "^3.7"
-pillow = "^10.4.0"
 lucide = {extras = ["django"], version = "^1.0.0"}
+markdown = "^3.7"
+nanoid = "^2.0.0"
+pillow = "^10.4.0"
+python = "^3.12"
 python-dotenv = "^1.0.1"
-
 
 [tool.poetry.group.dev.dependencies]
 pygments = "^2.18.0"
-ruff = "^0.7.0"
 
 [build-system]
 requires = ["poetry-core"]

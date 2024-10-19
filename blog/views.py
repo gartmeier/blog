@@ -10,7 +10,7 @@ def post_list(request):
     posts = Post.objects.all()
 
     if not request.user.is_staff:
-        posts = posts.published()
+        posts = posts.live()
 
     return render(request, "blog/post_list.html", {"posts": posts})
 
@@ -19,7 +19,7 @@ def post_detail(request, slug):
     posts = Post.objects.all()
 
     if not request.user.is_staff:
-        posts = posts.published()
+        posts = posts.live()
 
     post = get_object_or_404(posts, slug=slug)
     return render(request, "blog/post_detail.html", {"title": post.title, "post": post})

@@ -8,11 +8,19 @@ from blog.models import Post
 class Renderer(DjangoTemplates):
     form_template_name = "blog/forms/div.html"
 
-class Textarea(forms.Textarea):
-    template_name = "blog/forms/textarea.html"
+
+class TiptapWidget(forms.Textarea):
+    template_name = "blog/forms/widgets/tiptap.html"
+
+    class Media:
+        js = ("dist/tiptap.js",)
+
 
 class PostForm(forms.ModelForm):
     default_renderer = Renderer
+
+    required_css_class = 'required'
+    error_css_class = 'has-error'
 
     title = forms.CharField(
         widget=forms.TextInput(attrs={"class": "input input-bordered"})
@@ -21,13 +29,7 @@ class PostForm(forms.ModelForm):
         widget=forms.DateInput(attrs={"class": "input input-bordered", "type": "date"}),
         initial=timezone.now,
     )
-    body = forms.CharField(
-        widget=forms.Textarea(
-            attrs={
-                "class": "textarea textarea-bordered min-h-[250px] [field-sizing:content]"
-            }
-        )
-    )
+    body = forms.CharField(widget=TiptapWidget())
 
     class Meta:
         model = Post

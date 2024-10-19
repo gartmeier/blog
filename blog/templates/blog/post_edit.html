@@ -1,14 +1,22 @@
 {% extends "blog/base.html" %}
 
+{% load static %}
+
+
 {% block content %}
   <form method="post">
     {% csrf_token %}
-    <div class="mb-4 grid space-y-4">
+    <div class="grid gap-4">
       {{ form }}
+      <div class="flex gap-4">
+        <button class="btn btn-primary" name="publish">
+          Publish
+        </button>
+        <button class="btn btn-neutral" name="save_as_draft">
+          Save as draft
+        </button>
+      </div>
     </div>
-    <div class="flex space-x-2">
-      <button class="btn btn-primary" name="publish">Publish</button>
-      <button class="btn btn-ghost" name="save_draft">Save draft</button>
-    </div>
+    {{ form.media }}
   </form>
 {% endblock %}

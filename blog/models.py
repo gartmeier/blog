@@ -7,7 +7,7 @@ from utils import nanoid
 
 
 class PostQuerySet(models.QuerySet):
-    def published(self):
+    def live(self):
         return self.filter(live=True)
 
 
