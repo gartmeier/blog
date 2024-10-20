@@ -10,7 +10,7 @@
 	},
 	"scripts": {
 		"watch:css": "tailwindcss -i blog/static/style.css -o blog/static/dist/style.css --watch",
-		"buid:css": "tailwindcss -i blog/static/style.css -o blog/static/dist/style.css --watch",
+		"build:css": "tailwindcss -i blog/static/style.css -o blog/static/dist/style.css",
 		"watch:js": "rollup -c -w",
 		"build:js": "rollup -c"
 	}
