@@ -1,14 +1,18 @@
 {% extends "blog/base.html" %}
+{% load lucide %}
 {% load markdown %}
 
 {% block content %}
-  {% if user.is_authenticated %}
-    <div class="text-center mb-14">
-      <a class="btn btn-outline btn-sm" role="button" href="{% url "post_edit" post.slug %}">Edit</a>
+  <div class="flex justify-between items-center mb-4">
+    <div>
+      <h1 class="mb-1 text-5xl font-bold">{{ post.title }}</h1>
+      <p class="opacity-70">{{ post.date }}</p>
     </div>
-  {% endif %}
+    {% if user.is_authenticated %}
+      <a class="btn btn-sm" href="{% url "post_edit" post.slug %}">{% lucide "pencil" size=20 %} Edit</a>
+    {% endif %}
+  </div>
   <div class="prose lg:prose-xl mb-14">
-    <h1>{{ post.title }}</h1>
     {{ post.body|render_markdown }}
   </div>
 {% endblock %}

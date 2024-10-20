@@ -1,6 +1,5 @@
 import { Editor } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
-import { Placeholder } from "@tiptap/extension-placeholder";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import { common, createLowlight } from "lowlight";
 
@@ -15,9 +14,6 @@ document.querySelectorAll(".tiptap-container").forEach((containerElement) => {
     extensions: [
       StarterKit.configure({
         codeBlock: false,
-      }),
-      Placeholder.configure({
-        placeholder: "Write your post content here...",
       }),
       CodeBlockLowlight.configure({
         lowlight,

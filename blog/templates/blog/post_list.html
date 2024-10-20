@@ -1,14 +1,17 @@
 {% extends "blog/base.html" %}
+
+{% load lucide %}
 {% load i18n %}
 
-{% block content %}
+{% block toolbar %}
   {% if user.is_authenticated %}
-    <div class="text-center mb-14">
-      <a class="btn btn-outline btn-sm" role="button" href="{% url "post_new" %}">
-        {% trans "Create Post" %}
-      </a>
+    <div class="mx-auto p-2 max-w-screen-md text-right">
+      <a class="btn btn-sm" href="{% url "post_new" %}">Create Post</a>
     </div>
   {% endif %}
+{% endblock %}
+
+{% block content %}
   {% for post in posts %}
     <a class="mb-8 py-4" href="{{ post.get_absolute_url }}">
       <post>

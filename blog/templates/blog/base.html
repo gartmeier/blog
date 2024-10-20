@@ -10,8 +10,8 @@
   <link rel="icon" href="data:,">
 </head>
 <body>
+{% block toolbar %}{% endblock %}
 <div class="mx-auto pt-16 max-w-screen-md">
-  {% block toolbar %}{% endblock %}
   {% block header %}
     <div class="mb-10 text-center">
       <a class="inline-block p-2" href="{% url "post_list" %}">
