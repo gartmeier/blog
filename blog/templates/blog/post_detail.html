@@ -3,22 +3,11 @@
 {% load markdown %}
 
 {% block content %}
-  <div class="flex justify-between items-center mb-4">
-    <div>
-      <h1 class="mb-1 text-5xl font-bold">{{ post.title }}</h1>
-      <p class="opacity-70">{{ post.date }}</p>
-    </div>
-    {% if user.is_authenticated %}
-      <a class="btn btn-sm" href="{% url "post_edit" post.slug %}">{% lucide "pencil" size=20 %} Edit</a>
-    {% endif %}
+  <div class="">
+  <h1 class="text-3xl font-extrabold">{{ post.title }}</h1>
+  <p class="mb-8 text-sm opacity-70">{{ post.date|date:"F j, Y" }}</p>
+  <div class="prose prose-sm lg:prose-base mb-14">
+    {{ post.body|render_markdown }}
   </div>
-  <div class="prose lg:prose-xl mb-14">
-    {{ post.body|safe }}
   </div>
-{% endblock %}
-
-{% block extra_js %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
-  <script>hljs.highlightAll();</script>
 {% endblock %}

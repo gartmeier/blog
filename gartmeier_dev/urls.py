@@ -20,9 +20,7 @@ from blog import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("new", views.post_new, name="post_new"),
-    path("<slug:slug>", views.post_detail, name="post_detail"),
-    path("<slug:slug>/edit", views.post_edit, name="post_edit"),
     path("", views.post_list, name="post_list"),
+    path("<slug:slug>/", views.post_detail, name="post_detail"),
     path("__reload__/", include("django_browser_reload.urls")),
 ]

@@ -16,8 +16,8 @@
     <a class="mb-8 py-4" href="{{ post.get_absolute_url }}">
       <post>
         <header>
-          <h2 class="text-[28px] font-black">{{ post.title }}</h2>
-          <p class="mb-1 text-sm opacity-70">{{ post.date }}</p>
+          <h2 class="text-3xl font-extrabold">{{ post.title }}</h2>
+          <p class="mb-1 text-sm opacity-70">{{ post.date|date:"F j, Y" }}</p>
         </header>
       </post>
     </a>
