@@ -4,9 +4,9 @@
 
 {% block content %}
   <div class="">
-  <h1 class="text-3xl font-extrabold">{{ post.title }}</h1>
-  <p class="mb-8 text-sm opacity-70">{{ post.date|date:"F j, Y" }}</p>
-  <div class="prose prose-sm lg:prose-base mb-14">
+  <p class="mb-8">{{ post.date|date:"F j, Y" }}</p>
+  <div class="prose lg:prose-xl mb-14">
+    <h1>{{ post.title }}</h1>
     {{ post.body|render_markdown }}
   </div>
   </div>
