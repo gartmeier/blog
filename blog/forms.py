@@ -19,8 +19,8 @@ class TiptapWidget(forms.Textarea):
 class PostForm(forms.ModelForm):
     default_renderer = Renderer
 
-    required_css_class = 'required'
-    error_css_class = 'has-error'
+    required_css_class = "required"
+    error_css_class = "has-error"
 
     title = forms.CharField(
         widget=forms.TextInput(attrs={"class": "input input-bordered"})
